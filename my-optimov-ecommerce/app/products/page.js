@@ -1,21 +1,5 @@
 import ProductCard from '../components/ProductCard'
-
-const productsData = [
-  {
-    id: 1,
-    name: 'Unitree Go1',
-    price: 2700,
-    image: '/images/go1.jpg',
-    description: 'Robot quadrupede agile e leggero, ideale per ispezioni e ricerca.'
-  },
-  {
-    id: 2,
-    name: 'Unitree A1',
-    price: 12000,
-    image: '/images/a1.jpg',
-    description: 'Robot quadrupede ad alte prestazioni per applicazioni professionali.'
-  },
-]
+import productsData from '../productsData'
 
 export default function ProductsPage() {
   return (
