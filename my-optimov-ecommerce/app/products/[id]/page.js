@@ -3,11 +3,7 @@ import { useContext } from 'react'
 import { useParams } from 'next/navigation'
 import Image from 'next/image'
 import { CartContext } from '../../components/CartContext'
-
-const productsData = [
-  { id: 1, name: 'Unitree Go1', price: 2700, image: '/images/go1.jpg', description: 'Robot quadrupede agile e leggero...' },
-  { id: 2, name: 'Unitree A1', price: 12000, image: '/images/a1.jpg', description: 'Robot quadrupede ad alte prestazioni...' },
-]
+import productsData from '../../productsData'
 
 export default function ProductDetailPage() {
   const { id } = useParams()
@@ -38,6 +34,13 @@ export default function ProductDetailPage() {
         <h2 className="text-3xl font-bold mb-4">{product.name}</h2>
         <p className="text-gray-600 mb-4">\u20AC{product.price}</p>
         <p className="mb-6">{product.description}</p>
+        {product.features && (
+          <ul className="list-disc pl-5 mb-6 space-y-1">
+            {product.features.map((feature, idx) => (
+              <li key={idx}>{feature}</li>
+            ))}
+          </ul>
+        )}
 
         <button
           onClick={handleAddToCart}
